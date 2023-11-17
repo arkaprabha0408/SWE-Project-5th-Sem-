@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Sign Up</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image:url(pf2.jpeg);
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .signup-container {
+      background-color: whitesmoke;
+      width: 500px;
+      padding: 40px;
+      margin-top: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 20px aqua;
+      text-align: center;
+      overflow: auto;
+    }
+
+    .signup-container h2 {
+      margin-bottom: 30px;
+      color: #000000;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #555;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="password"],
+    .form-group input[type="number"],
+    .form-group select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .form-group input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      background-color: #4caf50;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .form-group input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="signup-container">
+    <h2>User Sign Up</h2>
+    <form onsubmit="saveUserData(event)">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+      </div>
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" placeholder="Enter your address" required>
+      </div>
+      <div class="form-group">
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+        <div class="form-group">
+        <label for="pan">PAN Card No:</label>
+        <input type="text" id="pan" name="pan" placeholder="Enter your PAN card number" required>
+      </div>
+      <div class="form-group">
+        <label for="mobile">Mobile Number:</label>
+        <input type="number" id="mobile" name="mobile" placeholder="Enter your mobile number" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Sign Up">
+      </div>
+    </form>
+  </div>
+
+  <script>
+    function saveUserData(event) {
+      event.preventDefault(); // Prevent form submission
+      const userData = {
+        name: document.getElementById('name').value,
+        address: document.getElementById('address').value,
+        gender: document.getElementById('gender').value,
+        pan: document.getElementById('pan').value,
+        mobile: document.getElementById('mobile').value,
+        password: document.getElementById('password').value
+      };
+
+      // Store user data (You can use localStorage or send it to a server)
+      localStorage.setItem('userData', JSON.stringify(userData));
+      alert('Sign up successful! Now you can login.');
+      window.location.href = 'user_login.html'; // Redirect to the user login page
+    }
+  </script>
+</body>
+</html>

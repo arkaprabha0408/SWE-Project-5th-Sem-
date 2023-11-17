@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome Page</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('pf1.jpeg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding-top: 20px;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .brand-text {
+      font-size: 38px;
+      color: #ffffff;
+      cursor: pointer;
+      transition: transform 0.4s ease-in-out;
+      position: absolute;
+      font-weight: 600;
+      top: 25px;
+      left: 30px;
+    }
+    .brand-text-2{
+      font-size: 20px;
+      font-family: cursive;
+      font-weight: 500;
+      color: #ffffff;
+      cursor: pointer;
+      padding: 5px;
+      transition: transform 0.4s ease-in-out;
+      position: absolute;
+      top: 30px;
+      left: 450px;
+      box-shadow: 2px 2px 20px aquamarine;
+    }
+
+    .brand-text:hover {
+      transform: scale(1.1);
+       }
+
+    .buttons-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    .button-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+    }
+
+    .button-group button {
+      padding: 10px 20px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+
+    .button-group button:last-child {
+      margin-bottom: 0;
+    }
+
+    .button-group button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <span class="brand-text">Fintellectual</span>
+  <span class="brand-text-2">Your one-stop solution for Personal Finance</span>
+  <div class="buttons-container">
+    <div class="button-group">
+      <button onclick="redirectToAdminLogin()">Admin Login</button>
+    </div>
+    <div class="button-group">
+      <button onclick="redirectToUserSignup()">User Sign Up</button>
+      <button onclick="redirectToUserLogin()">User Login</button>
+    </div>
+  </div>
+
+  <script>
+
+    function redirectToAdminLogin() {
+      window.location.href = "admin_login.html";
+    }
+
+    function redirectToUserSignup() {
+      window.location.href = "user_signup.html";
+    }
+
+    function redirectToUserLogin() {
+      window.location.href = "user_login.html";
+    }
+  </script>
+</body>
+</html>
